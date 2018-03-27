@@ -27,6 +27,10 @@ task waitForUsersAPI(type: Exec) {
 	commandLine './wait-for-api.sh','http://localhost:8080/users', 'Users API'
 }
 
+task waitForSongsAPI(type: Exec) {
+	commandLine './wait-for-api.sh','http://localhost:8080/songs', 'Songs API'
+}
+
 test {
 	dependsOn cleanTest
 	dependsOn waitForUsersAPI
